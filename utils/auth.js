@@ -1,6 +1,5 @@
 
-import { h } from 'preact';
-import { useEffect } from 'preact';
+import { useEffect } from 'preact/hooks';
 import Router from 'next/router';
 
 export const login = ({ email }) => {

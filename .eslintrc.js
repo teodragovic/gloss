@@ -1,0 +1,76 @@
+
+module.exports = {
+    plugins: [
+        'react',
+        'empty-first-line',
+        'unicorn',
+    ],
+    extends: [
+        'eslint:recommended',
+        'plugin:react/recommended',
+    ],
+    rules: {
+        'brace-style': [ 2, '1tbs', { allowSingleLine: true }],
+        curly: [ 2, 'all' ],
+        'dot-location': [ 2, 'property' ],
+        'empty-first-line/empty-first-line': [ 2, 'always' ],
+        indent: [ 2, 4, { SwitchCase: 1, MemberExpression: 0, CallExpression: { arguments: 'off' } }],
+        'linebreak-style': [ 2, 'unix' ],
+        'lines-between-class-members': [ 2, 'always' ],
+        'multiline-comment-style': [ 1, 'separate-lines' ],
+        'no-console': 0,
+        'no-implicit-coercion': 2,
+        'no-implicit-globals': 2,
+        'no-multi-spaces': [ 1, { exceptions: { Property: true } }],
+        'no-proto': 2,
+        'no-unused-expressions': [ 2, { allowTernary: true, allowShortCircuit: true }],
+        'object-curly-newline': [ 2, { ImportDeclaration: { multiline: true } }],
+        'operator-linebreak': [ 2, 'after' ],
+        quotes: [ 2, 'single', { allowTemplateLiterals: true }],
+        'react/jsx-curly-spacing': [ 2, { when: 'always', children: true, spacing: { objectLiterals: 'never' }, allowMultiline: true }],
+        'react/jsx-uses-vars': 1,
+        'react/no-deprecated': 0,
+        'react/no-unknown-property': [ 2, { ignore: [ 'stroke-width', 'fill-opacity', 'stroke-linejoin', 'stroke-linecap', 'fill-rule', 'clip-rule', 'color-interpolation-filters', 'flood-opacity', 'stroke-opacity', 'stop-color', 'clip-path' ] }],
+        'space-before-function-paren': [ 2, 'never' ],
+        'unicorn/prefer-includes': 2,
+        'semi': [ 2, 'always' ],
+
+        // Kill nosiy rules until config adjusted
+        // @TODO: revisit rules by disabling one by one and fixing code in increments
+        'arrow-body-style': 0,
+        'consistent-return': 0,
+        'implicit-arrow-linebreak': 0,
+        'max-len': 0,
+        'no-param-reassign': 0,
+        'no-return-assign': 0,
+        'no-shadow': 0,
+        'no-unused-vars': 0,
+        'padded-blocks': 0,
+        'padding-line-between-statements': 0,
+        'react/display-name': 0,
+        'react/prop-types': 0,
+    },
+    env: {
+        browser: true,
+        es6: true,
+        node: true,
+        'shared-node-browser': true,
+    },
+    parser: 'babel-eslint',
+    parserOptions: {
+        ecmaVersion: 8,
+        sourceType: 'module',
+        allowImportExportEverywhere: true,
+        ecmaFeatures: {
+            experimentalObjectRestSpread: true,
+            impliedStrict: true,
+            jsx: true,
+        },
+    },
+    settings: {
+        react: {
+            pragma: 'h',
+            version: 'detect',
+        },
+    },
+};
